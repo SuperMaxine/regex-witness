@@ -1,0 +1,6 @@
+(set-logic QF_SLIA) 
+(set-option :strings-exp true) 
+(declare-fun v1 () String) 
+(assert (str.in_re v1 (re.++ re.allchar (re.* (re.union (re.range "a" "z") (str.to_re "1") (str.to_re "2") (str.to_re "3"))) (re.union (re.++ (str.to_re "f") (str.to_re "o") (str.to_re "o") (str.to_re "b") (str.to_re "a") (str.to_re "r")) (re.++ (str.to_re "b") (str.to_re "a") (str.to_re "z"))) (re.union (str.to_re "a") (str.to_re "y"))) )) 
+(check-sat) 
+(get-model)
